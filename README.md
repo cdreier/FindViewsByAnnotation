@@ -1,13 +1,13 @@
 FindViewsByAnnotation
 =====================
 
-I know the [roboguice](https://github.com/roboguice/roboguice/) injection framework.
+This is my first try with custom annotations, very simple to understand and does one helpful thing effectively: 
+reducing the boilerplate initialization code in the onCreate method.
 
-This is my first try with custom annotations, very simple to understand and does one helpful thing effectively.
+I know the [roboguice](https://github.com/roboguice/roboguice/) injection framework, which has a lot more features.
 
 Example
 ===
-
 
 ```java
 public class MainActivity extends Activity {
