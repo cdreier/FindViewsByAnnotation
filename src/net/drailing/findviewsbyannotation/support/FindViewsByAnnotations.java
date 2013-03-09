@@ -6,6 +6,23 @@ import android.app.Activity;
 
 public class FindViewsByAnnotations {
 
+	public static void init(Fragment frgmt, View v){
+		
+		for(Field f : frgmt.getClass().getDeclaredFields()){
+			if(f.isAnnotationPresent(InitWithId.class)){
+				InitWithId debug = f.getAnnotation(InitWithId.class);
+				f.setAccessible(true);
+				try {
+					f.set(frgmt, v.findViewById(debug.value()));
+				} catch (IllegalArgumentException e) {
+					e.printStackTrace();
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
 	
 	public static void init(Activity ctx){
 		
